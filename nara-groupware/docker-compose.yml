@@ -4,8 +4,9 @@ services:
   postgres:
     image: postgres:latest
     container_name: nara-groupware
+    command: ["postgres", "-c", "listen_addresses=*"]
     ports:
-      - "5432:5432"
+      - "0.0.0.0:5432:5432"
     environment:
       POSTGRES_USER: naragw
       POSTGRES_PASSWORD: naragw8620
