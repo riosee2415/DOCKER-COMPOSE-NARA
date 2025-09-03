@@ -6,13 +6,13 @@ services:
     container_name: nara-groupware-prod
     command: ["postgres", "-c", "listen_addresses=*"]
     ports:
-      - "0.0.0.0:5432:5432"
+      - "0.0.0.0:5433:5433"
     environment:
       POSTGRES_USER: naragw
       POSTGRES_PASSWORD: naragw8620
       POSTGRES_DB: nara-groupware-prod
     volumes:
-      - ./nara-groupware:/var/lib/postgresql/data
+      - ./nara-groupware-prod:/var/lib/postgresql/data
 
 volumes:
   nara-groupware:
